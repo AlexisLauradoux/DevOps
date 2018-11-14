@@ -1,0 +1,20 @@
+---
+- name: Install mysql
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  with_items:
+    - mysql
+  tags:
+    - mysql
+
+- name: Create a new database with name 'application'
+  mysql_db:
+    name: application
+    state: present
+    login_user: user
+    login_password: password
+  notify: restart mysql
+  tags:
+    - mysql
