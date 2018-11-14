@@ -6,6 +6,8 @@
     state: present
   with_items:
     - mysql-server
+    - mysql-client
+    - python-mysqldb
   tags:
     - mysql
 

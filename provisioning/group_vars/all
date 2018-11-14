@@ -1,6 +1,6 @@
 server_hostname: devops
 application_folder: application
-nginx_user: nginx_user
+nginx_user: user
 php_fpm_socket: /run/ph/php7.2-php_fpm_sock
 database_name: symfony
 database_user: symfony
