@@ -5,16 +5,16 @@
     update_cache: yes
     state: present
   with_items:
-    - mysql
+    - mysql-server
   tags:
     - mysql
 
 - name: Create a new database with name 'application'
   mysql_db:
-    name: application
+    name: " {{database_name}}"
     state: present
-    login_user: user
-    login_password: password
+    login_user: "{{database_user}}"
+    login_password: "{{database_password}}"
   notify: restart mysql
   tags:
     - mysql
